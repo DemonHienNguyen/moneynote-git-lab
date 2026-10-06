@@ -8,6 +8,10 @@ function tinhTong(danhSach, loai) {
   return tong;
 }
 
+function dinhDangTien(soTien) {
+  return new Intl.NumberFormat('vi-VN').format(soTien) + ' ₫';
+}
+
 if (typeof module !== 'undefined') {
-  module.exports = { tinhTong };
+  module.exports = { tinhTong, dinhDangTien };
 }

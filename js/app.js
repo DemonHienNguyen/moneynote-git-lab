@@ -17,12 +17,12 @@ function veDanhSach(ds) {
     ten.textContent = g.ngay + ' – ' + g.ghiChu;
     const tien = document.createElement('span');
     tien.className = g.loai;
-    tien.textContent = (g.loai === 'thu' ? '+ ' : '− ') + String(g.soTien);
+    tien.textContent = (g.loai === 'thu' ? '+ ' : '− ') + dinhDangTien(g.soTien);
     li.append(ten, tien);
     ul.append(li);
   });
 }
 
-document.getElementById('tongThu').textContent = String(tinhTong(giaoDich, 'thu'));
-document.getElementById('tongChi').textContent = String(tinhTong(giaoDich, 'chi'));
+document.getElementById('tongThu').textContent = dinhDangTien(tinhTong(giaoDich, 'thu'));
+document.getElementById('tongChi').textContent = dinhDangTien(tinhTong(giaoDich, 'chi'));
 veDanhSach(giaoDich);
