@@ -22,3 +22,8 @@ h1 { color: var(--primary); }
 #danhSach li { display: flex; justify-content: space-between; background: #fff; margin-bottom: 8px; padding: 12px; border-radius: 8px; }
 .thu { color: var(--thu); }
 .chi { color: var(--chi); }
+
+.bo-loc { display: flex; gap: 8px; margin: 16px 0; }
+.bo-loc button { padding: 8px 14px; border: 1px solid #ccc; border-radius: 8px; background: #fff; cursor: pointer; }
+.bo-loc button.dang-chon { background: var(--primary); color: #fff; border-color: var(--primary); }
+#oTimKiem { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 12px; }

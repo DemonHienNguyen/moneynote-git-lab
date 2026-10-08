@@ -8,6 +8,8 @@ const giaoDich = [
   { ngay: '2026-10-18', ghiChu: 'Vé xem phim', loai: 'chi', soTien: 110000 }
 ];
 
+let boLoc = 'tat-ca';
+
 function veDanhSach(ds) {
   const ul = document.getElementById('danhSach');
   ul.innerHTML = '';
@@ -23,6 +25,20 @@ function veDanhSach(ds) {
   });
 }
 
+function capNhat() {
+  let ds = locTheoLoai(giaoDich, boLoc);
+  veDanhSach(ds);
+}
+
+document.querySelectorAll('.bo-loc button').forEach(function (nut) {
+  nut.addEventListener('click', function () {
+    document.querySelectorAll('.bo-loc button').forEach(function (n) { n.classList.remove('dang-chon'); });
+    nut.classList.add('dang-chon');
+    boLoc = nut.dataset.loc;
+    capNhat();
+  });
+});
+
 document.getElementById('tongThu').textContent = dinhDangTien(tinhTong(giaoDich, 'thu'));
 document.getElementById('tongChi').textContent = dinhDangTien(tinhTong(giaoDich, 'chi'));
-veDanhSach(giaoDich);
+capNhat();

@@ -1,11 +1,14 @@
 // Các hàm tính toán, không đụng tới giao diện
 
 function tinhTong(danhSach, loai) {
-  let tong = 0;
-  danhSach.forEach(function (g) {
-    if (g.loai === loai) tong += g.soTien;
-  });
-  return tong;
+  return danhSach
+    .filter(function (g) { return g.loai === loai; })
+    .reduce(function (tong, g) { return tong + g.soTien; }, '');
+}
+
+function locTheoLoai(danhSach, loai) {
+  if (loai === 'tat-ca') return danhSach;
+  return danhSach.filter(function (g) { return g.loai === loai; });
 }
 
 function dinhDangTien(soTien) {
@@ -13,5 +16,5 @@ function dinhDangTien(soTien) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { tinhTong, dinhDangTien };
+  module.exports = { tinhTong, locTheoLoai, dinhDangTien };
 }
