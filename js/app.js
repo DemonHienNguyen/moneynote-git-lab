@@ -9,6 +9,7 @@ const giaoDich = [
 ];
 
 let boLoc = 'tat-ca';
+let tuKhoa = '';
 
 function veDanhSach(ds) {
   const ul = document.getElementById('danhSach');
@@ -27,6 +28,11 @@ function veDanhSach(ds) {
 
 function capNhat() {
   let ds = locTheoLoai(giaoDich, boLoc);
+  if (tuKhoa) {
+    ds = ds.filter(function (g) {
+      return g.ghiChu.toLowerCase().includes(tuKhoa.toLowerCase());
+    });
+  }
   veDanhSach(ds);
 }
 
@@ -37,6 +43,11 @@ document.querySelectorAll('.bo-loc button').forEach(function (nut) {
     boLoc = nut.dataset.loc;
     capNhat();
   });
+});
+
+document.getElementById('oTimKiem').addEventListener('input', function (e) {
+  tuKhoa = e.target.value;
+  capNhat();
 });
 
 document.getElementById('tongThu').textContent = dinhDangTien(tinhTong(giaoDich, 'thu'));
