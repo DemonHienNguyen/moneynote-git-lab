@@ -27,3 +27,5 @@ h1 { color: var(--primary); }
 .bo-loc button { padding: 8px 14px; border: 1px solid #ccc; border-radius: 8px; background: #fff; cursor: pointer; }
 .bo-loc button.dang-chon { background: var(--primary); color: #fff; border-color: var(--primary); }
 #oTimKiem { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 12px; }
+
+footer { text-align: center; color: #6B7280; font-size: 13px; padding: 24px 0; }
