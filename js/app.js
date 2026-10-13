@@ -53,3 +53,6 @@ document.getElementById('oTimKiem').addEventListener('input', function (e) {
 document.getElementById('tongThu').textContent = dinhDangTien(tinhTong(giaoDich, 'thu'));
 document.getElementById('tongChi').textContent = dinhDangTien(tinhTong(giaoDich, 'chi'));
 capNhat();
+
+console.log('DEBUG giaoDich =', giaoDich);
+console.log('DEBUG tong thu =', tinhTong(giaoDich, 'thu'));
