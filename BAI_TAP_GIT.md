@@ -324,3 +324,9 @@ git log --oneline --graph --all -25
 - [ ] Có file `thanh-vien/<ten-em>.md`, `js/csv.js`, `TRA_LOI.md`
 - [ ] Có tag `v1.0` trên GitHub
 - [ ] Có ít nhất 1 Pull Request đã merge
+
+---
+
+## Phần 8. Làm việc nhóm
+
+Làm xong phần cá nhân, nhóm tiếp tục với **`BAI_TAP_NHOM.md`**: repo chung, Issue, Pull Request, duyệt code và xung đột thật giữa các thành viên.
