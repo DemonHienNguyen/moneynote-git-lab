@@ -8,6 +8,7 @@ Repo này là một dự án nhỏ do ba bạn **Minh, Lan, Hùng** làm chung. 
 - Gặp câu hỏi đánh dấu **❓**, em ghi câu trả lời vào file `TRA_LOI.md` ở thư mục gốc (tự tạo ở Phần 2).
 - Mọi lệnh gõ trong terminal (Git Bash, PowerShell hoặc Terminal của VS Code) **đang đứng trong thư mục repo**.
 - Làm hỏng thì giải nén lại hoặc clone lại từ đầu, không sao cả.
+- Quên lệnh thì tra **`HUONG_DAN_LENH_GIT.md`**.
 
 Cần cài sẵn: **Git** và **Node.js** (dùng để chạy file kiểm tra `kiem-tra.js`).
 
