@@ -76,3 +76,18 @@ Giải thích: Mặc dù Commit chỉ sửa giao diện nhưng tác giả thay �
 + Sau rebase mã commit "Them hàm xuất CSV" bị thay đổi thành mã mới
 + Vì rebase sễ tính toán lại giá trị băm dựa trên commit gốc mới, thời gian tạo mới và commit cha mới
 + Vì lệnh sẽ thay đổi và viết lại lịch sử commit. Nếu người khác đã kéo nhánh cũ về, khi họ cập nhật sẽ bị lỗi xung đột nghiêm trọng và làm xáo trộn, hổng lịch sử git trên máy của họ
+
+❓ **Câu 12.** `git fetch` và `git pull` khác nhau thế nào?
+
+`git pull` chính là bằng `git fetch` cộng với `git merge`.
+
+* `git fetch`: Chỉ tải code mới từ server về máy (lưu trong bộ nhớ đệm), không làm thay đổi code hiện tại bạn đang gõ. Bạn có thể an tâm kiểm tra trước khi gộp.
+* `git pull`: Vừa tải code mới về, vừa tự động gộp thẳng vào nhánh bạn đang đứng. Cách này nhanh hơn nhưng dễ gây xung đột (conflict) bất ngờ nếu bạn chưa chuẩn bị trước.
+
+```bash
+git log --oneline --graph --all -25
+```
+
+![1793467180416](image/TRA_LOI/1793467180416.png)
+
+---
