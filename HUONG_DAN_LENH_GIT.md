@@ -60,24 +60,24 @@ git switch feature/tieu-de
 
 ## 4. Xem trạng thái và lịch sử
 
-| Lệnh | Dùng để |
-|---|---|
-| `git status` | Đang ở nhánh nào, file nào đã sửa, file nào đã vào vùng chờ |
-| `git status -s` | Như trên, dạng ngắn gọn |
-| `git log --oneline` | Danh sách commit, mỗi commit một dòng |
-| `git log --oneline --graph --all` | Sơ đồ tất cả các nhánh |
-| `git log --oneline -5` | 5 commit gần nhất |
-| `git log --author="Lan" --oneline` | Lọc theo tác giả |
-| `git log --oneline --grep="CSV"` | Lọc theo nội dung thông điệp commit |
-| `git log --oneline -- js/app.js` | Các commit có sửa file `js/app.js` |
-| `git log --oneline main..feature/xuat-csv` | Commit có trên `feature/xuat-csv` mà `main` chưa có |
-| `git show <ma-commit>` | Xem chi tiết một commit |
-| `git show v0.1 --stat` | Tag `v0.1` trỏ vào commit nào, sửa những file nào |
-| `git blame js/tinh-toan.js` | Từng dòng do ai viết, ở commit nào |
-| `git diff` | Thay đổi **chưa** `add` |
-| `git diff --staged` | Thay đổi **đã** `add`, sẽ vào commit tới |
-| `git diff main feature/tieu-de` | So sánh hai nhánh |
-| `git grep -n "DEBUG"` | Tìm chữ trong các file Git đang quản lý |
+| Lệnh                                        | Dùng để                                                                |
+| -------------------------------------------- | ------------------------------------------------------------------------- |
+| `git status`                               | Đang ở nhánh nào, file nào đã sửa, file nào đã vào vùng chờ |
+| `git status -s`                            | Như trên, dạng ngắn gọn                                              |
+| `git log --oneline`                        | Danh sách commit, mỗi commit một dòng                                 |
+| `git log --oneline --graph --all`          | Sơ đồ tất cả các nhánh                                             |
+| `git log --oneline -5`                     | 5 commit gần nhất                                                       |
+| `git log --author="Lan" --oneline`         | Lọc theo tác giả                                                       |
+| `git log --oneline --grep="CSV"`           | Lọc theo nội dung thông điệp commit                                  |
+| `git log --oneline -- js/app.js`           | Các commit có sửa file `js/app.js`                                   |
+| `git log --oneline main..feature/xuat-csv` | Commit có trên `feature/xuat-csv` mà `main` chưa có              |
+| `git show <ma-commit>`                     | Xem chi tiết một commit                                                 |
+| `git show v0.1 --stat`                     | Tag `v0.1` trỏ vào commit nào, sửa những file nào                 |
+| `git blame js/tinh-toan.js`                | Từng dòng do ai viết, ở commit nào                                   |
+| `git diff`                                 | Thay đổi **chưa** `add`                                        |
+| `git diff --staged`                        | Thay đổi **đã** `add`, sẽ vào commit tới                   |
+| `git diff main feature/tieu-de`            | So sánh hai nhánh                                                       |
+| `git grep -n "DEBUG"`                      | Tìm chữ trong các file Git đang quản lý                             |
 
 ---
 
@@ -94,10 +94,10 @@ git commit -am "Sửa chữ trên nút lọc"   # add + commit các file ĐÃ đ
 
 **Thông điệp commit tốt:** tiếng Việt có dấu, bắt đầu bằng động từ, dưới 72 ký tự, nói rõ làm gì.
 
-| Nên | Không nên |
-|---|---|
-| `Sửa giá trị khởi tạo reduce trong tinhTong (#1)` | `sua loi` |
-| `Thêm thẻ Số dư vào trang chủ (#5)` | `update`, `abc`, `fix fix fix` |
+| Nên                                                     | Không nên                          |
+| -------------------------------------------------------- | ------------------------------------ |
+| `Sửa giá trị khởi tạo reduce trong tinhTong (#1)` | `sua loi`                          |
+| `Thêm thẻ Số dư vào trang chủ (#5)`              | `update`, `abc`, `fix fix fix` |
 
 ### `.gitignore`
 
@@ -166,17 +166,17 @@ git merge --abort                   # đang xung đột, muốn hủy và quay v
 
 ## 8. Hoàn tác (undo)
 
-| Tình huống | Lệnh |
-|---|---|
-| Sửa file lung tung, muốn bỏ hết thay đổi **chưa add** | `git restore <file>` |
-| Đã `add` nhầm, muốn bỏ khỏi vùng chờ (vẫn giữ thay đổi) | `git restore --staged <file>` |
-| Vừa commit, muốn sửa thông điệp hoặc thêm file quên | `git add <file>` rồi `git commit --amend -m "Thông điệp mới"` |
-| Bỏ commit cuối, giữ thay đổi trong vùng chờ | `git reset --soft HEAD~1` |
-| Bỏ commit cuối, giữ thay đổi nhưng chưa add | `git reset HEAD~1` (mặc định là `--mixed`) |
-| Bỏ hẳn 3 commit cuối và mọi thay đổi | `git reset --hard HEAD~3` ⚠️ |
-| Gỡ một commit **đã đẩy lên nhánh chung** | `git revert <ma-commit>` |
-| Lỡ `reset --hard`, muốn cứu lại | `git reflog` rồi `git reset --hard <ma-truoc-do>` |
-| Lấy lại một file như ở commit cũ | `git restore --source=<ma-commit> <file>` |
+| Tình huống                                                          | Lệnh                                                                  |
+| --------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Sửa file lung tung, muốn bỏ hết thay đổi **chưa add**    | `git restore <file>`                                                 |
+| Đã `add` nhầm, muốn bỏ khỏi vùng chờ (vẫn giữ thay đổi) | `git restore --staged <file>`                                        |
+| Vừa commit, muốn sửa thông điệp hoặc thêm file quên          | `git add <file>` rồi `git commit --amend -m "Thông điệp mới"` |
+| Bỏ commit cuối, giữ thay đổi trong vùng chờ                    | `git reset --soft HEAD~1`                                            |
+| Bỏ commit cuối, giữ thay đổi nhưng chưa add                    | `git reset HEAD~1` (mặc định là `--mixed`)                     |
+| Bỏ hẳn 3 commit cuối và mọi thay đổi                           | `git reset --hard HEAD~3` ⚠️                                       |
+| Gỡ một commit **đã đẩy lên nhánh chung**                | `git revert <ma-commit>`                                             |
+| Lỡ `reset --hard`, muốn cứu lại                                 | `git reflog` rồi `git reset --hard <ma-truoc-do>`                 |
+| Lấy lại một file như ở commit cũ                                | `git restore --source=<ma-commit> <file>`                            |
 
 `HEAD~1` là commit ngay trước commit hiện tại, `HEAD~3` là lùi 3 commit.
 
@@ -259,11 +259,11 @@ git switch main
 git merge --ff-only feature/xuat-csv
 ```
 
-| | `merge` | `rebase` |
-|---|---|---|
-| Lịch sử | Giữ nguyên, có merge commit | Thẳng hàng, như làm tuần tự |
-| Mã commit | Không đổi | **Đổi** (commit mới) |
-| An toàn với nhánh đã chia sẻ | Có | **Không**, chỉ rebase nhánh của riêng mình |
+|                                    | `merge`                      | `rebase`                                             |
+| ---------------------------------- | ------------------------------ | ------------------------------------------------------ |
+| Lịch sử                          | Giữ nguyên, có merge commit | Thẳng hàng, như làm tuần tự                      |
+| Mã commit                         | Không đổi                   | **Đổi** (commit mới)                          |
+| An toàn với nhánh đã chia sẻ | Có                            | **Không**, chỉ rebase nhánh của riêng mình |
 
 ---
 
@@ -303,11 +303,11 @@ git pull                                        # fetch + merge vào nhánh hi�
 git pull --rebase                               # fetch + rebase, lịch sử gọn hơn
 ```
 
-| | `git fetch` | `git pull` |
-|---|---|---|
-| Tải commit mới từ GitHub | Có | Có |
-| Thay đổi file trên máy em | Không | Có (gộp vào nhánh hiện tại) |
-| Khi nào dùng | Muốn xem trước người khác đã làm gì | Muốn cập nhật ngay |
+|                               | `git fetch`                                 | `git pull`                      |
+| ----------------------------- | --------------------------------------------- | --------------------------------- |
+| Tải commit mới từ GitHub   | Có                                           | Có                               |
+| Thay đổi file trên máy em | Không                                        | Có (gộp vào nhánh hiện tại) |
+| Khi nào dùng                | Muốn xem trước người khác đã làm gì | Muốn cập nhật ngay             |
 
 Xem trước rồi mới gộp:
 
@@ -440,18 +440,18 @@ git push
 
 ## 15. Lỗi thường gặp
 
-| Thông báo | Nghĩa là | Cách xử lý |
-|---|---|---|
-| `fatal: not a git repository` | Đang đứng sai thư mục | `cd` vào thư mục repo |
-| `Please tell me who you are` | Chưa cấu hình tên, email | Làm mục 2 |
-| `nothing added to commit` | Chưa `git add` | `git add <file>` rồi commit lại |
-| `error: Your local changes ... would be overwritten` | Có thay đổi chưa commit, không chuyển nhánh / pull được | `git commit` hoặc `git stash` trước |
-| `! [rejected] main -> main (fetch first)` | GitHub có commit mới mà máy em chưa có | `git pull` rồi `git push` lại |
-| `GH013: Repository rule violations` / `protected branch` | Đẩy thẳng lên `main` đã được bảo vệ | Tạo nhánh, mở Pull Request |
-| `CONFLICT (content): Merge conflict in ...` | Hai bên sửa cùng chỗ | Làm theo mục 7 |
-| `You are in 'detached HEAD' state` | Đang đứng ở một commit, không ở nhánh nào (thường gặp khi bisect) | `git switch main`, hoặc `git switch -c <ten-nhanh>` để giữ lại việc đang làm |
-| `fatal: refusing to merge unrelated histories` | Hai repo không chung gốc (thường do tạo repo trên GitHub có tick README) | Tạo lại repo trống, hoặc `git pull origin main --allow-unrelated-histories` |
-| `Authentication failed` / `Permission denied` | Chưa đăng nhập hoặc không có quyền ghi | Đăng nhập lại (mục 13), kiểm tra đã được mời làm cộng tác viên chưa |
+| Thông báo                                                  | Nghĩa là                                                                      | Cách xử lý                                                                            |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `fatal: not a git repository`                              | Đang đứng sai thư mục                                                      | `cd` vào thư mục repo                                                               |
+| `Please tell me who you are`                               | Chưa cấu hình tên, email                                                    | Làm mục 2                                                                              |
+| `nothing added to commit`                                  | Chưa `git add`                                                               | `git add <file>` rồi commit lại                                                      |
+| `error: Your local changes ... would be overwritten`       | Có thay đổi chưa commit, không chuyển nhánh / pull được               | `git commit` hoặc `git stash` trước                                               |
+| `! [rejected] main -> main (fetch first)`                  | GitHub có commit mới mà máy em chưa có                                    | `git pull` rồi `git push` lại                                                      |
+| `GH013: Repository rule violations` / `protected branch` | Đẩy thẳng lên `main` đã được bảo vệ                                | Tạo nhánh, mở Pull Request                                                            |
+| `CONFLICT (content): Merge conflict in ...`                | Hai bên sửa cùng chỗ                                                        | Làm theo mục 7                                                                         |
+| `You are in 'detached HEAD' state`                         | Đang đứng ở một commit, không ở nhánh nào (thường gặp khi bisect)   | `git switch main`, hoặc `git switch -c <ten-nhanh>` để giữ lại việc đang làm |
+| `fatal: refusing to merge unrelated histories`             | Hai repo không chung gốc (thường do tạo repo trên GitHub có tick README) | Tạo lại repo trống, hoặc `git pull origin main --allow-unrelated-histories`        |
+| `Authentication failed` / `Permission denied`            | Chưa đăng nhập hoặc không có quyền ghi                                  | Đăng nhập lại (mục 13), kiểm tra đã được mời làm cộng tác viên chưa     |
 
 ---
 
