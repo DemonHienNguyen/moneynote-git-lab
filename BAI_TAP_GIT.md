@@ -110,7 +110,9 @@ Tạo file `TRA_LOI.md`, ghi câu trả lời Câu 1–3, rồi `add` và `commi
 
 ❓ **Câu 4.** `git diff` và `git diff --staged` khác nhau thế nào? Vì sao file `.env` không bao giờ nên đưa lên Git?
 
----
+=**`git diff` dùng để xem các thay đổi chưa được thêm vào vùng chờ (Staging Area), trong khi `git diff --staged` dùng để xem các thay đổi đã được thêm vào vùng chờ và sẵn sàng để commit.**=
+
+File `.env` chứa các thông tin cấu hình nhạy cảm của dự án, việc đưa file này lên Git sẽ tạo ra những rủi ro nghiêm trọng về bảo mật và quản lý hệ thống.
 
 ## Phần 3. Nhánh và gộp nhánh (merge)
 
