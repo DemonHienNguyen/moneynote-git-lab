@@ -39,7 +39,7 @@ File `.env` chứa các thông tin cấu hình nhạy cảm của dự án, vi�
 ❓ **Câu 6.** Vì sao gộp `feature/giao-dien-moi` không xung đột, còn `feature/tieu-de` thì có?
 
 + Gộp feature/giao-dien-moi (Không xung đột): Bạn Hùng sửa ở file hoặc vị trí khác với bạn (bạn thêm file .md, bạn Hùng sửa index.html). Git tự động gộp được.
-+ Gộp feature/tieu-de (Xung đột): Cả hai nhánh cùng sửa chung một dòng
++ Gộp feature/tieu-de (Xung đột): Cả hai nhánh cùng sửa chung một dòng trong file index.html. Git không biết chọn ai nên bắt con người tự xử lý.
 
 ❓ **Câu 7.** Vì sao dùng `git revert` chứ không dùng `git reset` để gỡ commit đã có trên nhánh chung?
 
@@ -52,89 +52,16 @@ File `.env` chứa các thông tin cấu hình nhạy cảm của dự án, vi�
 * **`--mixed`:** Hủy commit và hủy luôn `git add`. Code quay về trạng thái chưa làm gì, dùng khi muốn **chia nhỏ commit** hoặc  **add lại từ đầu** **.**
 * **`--hard`:** Xóa sạch sành sanh mọi thứ. Dùng khi code hiện tại đã nát và bạn muốn **đập đi làm lại** từ một commit cũ trong quá khứ.
 
----
+❓ **Câu 9.** Commit gây lỗi là commit nào (mã, thông điệp, tác giả)? Dùng `git show <mã>` và giải thích ngắn gọn vì sao code đó gây lỗi.
 
+commit e6c6c6f372bde3dc9bf79e7c00c1cb601492a732 (HEAD, origin/feature/giao-dien-moi, feature/giao-dien-moi)
+Author: Lê Hùng <hung@example.com>
+Date:   Thu Oct 15 19:00:00 2026 +0700
 
+    Đổi màu chủ đạo sang xanh ngọc và tiêu đề mới
 
+ css/style.css | 2 +-
+ index.html    | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- trong file index.html. Git không biết chọn ai nên bắt con người tự xử lý.
+Giải thích: Mặc dù Commit chỉ sửa giao diện nhưng tác giả thay đỏi thuộc tính type = "number" thành type = "text" tại ô nhập liệu số tiền thu, điều này khiến JS  khi lấy giá trị từ ô nhập liệu bằng thuộc tính .value thì sẽ nhận dưới dạng chuooixu thay vì số, khi thực hiện phép  cộng thì JS tự hiểu đây là phép cộng chuỗi dẫn dến sai lệch dạng văn bản
