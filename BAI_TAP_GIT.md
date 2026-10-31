@@ -169,8 +169,6 @@ Cả nhóm thống nhất chọn tiêu đề **"MoneyNote – Quản lý chi ti�
 ❓ **Câu 5.** Vì sao 3.1 là fast-forward còn 3.2 lại tạo merge commit?
 ❓ **Câu 6.** Vì sao gộp `feature/giao-dien-moi` không xung đột, còn `feature/tieu-de` thì có?
 
----
-
 ## Phần 4. Hoàn tác (undo)
 
 **4.1 Gỡ commit debug bằng `revert`**
