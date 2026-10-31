@@ -20,3 +20,5 @@ kiem-tra.js       Kiểm tra nhanh hàm tính tổng: node kiem-tra.js
 - Trần Lan
 - Lê Hùng
 - Nguyễn Minh Hiển
+
+## Cách kiểm tra: `node kiem-tra.js`
