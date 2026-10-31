@@ -65,3 +65,14 @@ Date:   Thu Oct 15 19:00:00 2026 +0700
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 Giải thích: Mặc dù Commit chỉ sửa giao diện nhưng tác giả thay đỏi thuộc tính type = "number" thành type = "text" tại ô nhập liệu số tiền thu, điều này khiến JS  khi lấy giá trị từ ô nhập liệu bằng thuộc tính .value thì sẽ nhận dưới dạng chuooixu thay vì số, khi thực hiện phép  cộng thì JS tự hiểu đây là phép cộng chuỗi dẫn dến sai lệch dạng văn bản
+
+❓ **Câu 10.** Nếu dùng `git merge hotfix/sua-loi-cong` thay cho `cherry-pick` thì chuyện gì xảy ra?
+
+* Bị lẫn code chưa duyệt: Nhánh `main` sẽ lấy về toàn bộ các commit của nhánh hotfix, bao gồm cả commit thử nghiệm font Comic Sans (chưa được duyệt).
+* Sai kết quả mong đợi: Giao diện trang web sẽ bị đổi font chữ sang Comic Sans, không đạt yêu cầu của bài thực hành.
+
+❓ **Câu 11.** Sau rebase, mã commit "Thêm hàm xuất CSV" có giống mã cũ không? Vì sao không nên rebase một nhánh mà bạn khác đã kéo về máy?
+
++ Sau rebase mã commit "Them hàm xuất CSV" bị thay đổi thành mã mới
++ Vì rebase sễ tính toán lại giá trị băm dựa trên commit gốc mới, thời gian tạo mới và commit cha mới
++ Vì lệnh sẽ thay đổi và viết lại lịch sử commit. Nếu người khác đã kéo nhánh cũ về, khi họ cập nhật sẽ bị lỗi xung đột nghiêm trọng và làm xáo trộn, hổng lịch sử git trên máy của họ
